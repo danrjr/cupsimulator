@@ -69,6 +69,44 @@ p13 = []
 p14 = [] 
 p15 = [] 
 
+arr0q = []
+arr1q = []
+arr2q = []
+arr3q = []
+arr4q = []
+arr5q = []
+arr6q = []
+arr7q = []
+p0q = []
+p1q = []
+p2q = []
+p3q = []
+p4q = []
+p5q = []
+p6q = []
+p7q = []
+
+arr0s = []
+arr1s = []
+arr2s = []
+arr3s = []
+
+p0s = []
+p1s = []
+p2s = []
+p3s = []
+
+arr0t = []
+arr1t = []
+arr0f = []
+arr1f = []
+
+p0t = []
+p1t = []
+p0f = []
+p1f = []
+
+
 function geraGolsForte(array){ 
     while (array.length < 1){ 
         var gols=[0,1,2,3,4,5,6,7,8]
@@ -148,6 +186,45 @@ penalti(p13)
 penalti(p14)
 penalti(p15)
 
+geraGolsForte(arr0q)
+geraGolsForte(arr1q)
+geraGolsForte(arr2q)
+geraGolsForte(arr3q)
+geraGolsForte(arr4q)
+geraGolsForte(arr5q)
+geraGolsForte(arr6q)
+geraGolsForte(arr7q)
+
+penalti(p0q)
+penalti(p1q)
+penalti(p2q)
+penalti(p3q)
+penalti(p4q)
+penalti(p5q)
+penalti(p6q)
+penalti(p7q)
+
+geraGolsForte(arr0s)
+geraGolsForte(arr1s)
+geraGolsForte(arr2s)
+geraGolsForte(arr3s)
+
+penalti(p0s)
+penalti(p1s)
+penalti(p2s)
+penalti(p3s)
+
+geraGolsForte(arr0t)
+geraGolsForte(arr1t)
+geraGolsForte(arr0f)
+geraGolsForte(arr1f)
+
+penalti(p0t)
+penalti(p1t)
+penalti(p0f)
+penalti(p1f)
+
+
 const sum_penalti = (arr) => arr.reduce((acc,next) => acc +=next, 0)
 
 let oitavas = [
@@ -170,31 +247,32 @@ let oitavas = [
 ]
 
 let quartas = [
-    {nome: "", gol: arr0, penalti: p0, total_penalti: sum_penalti(p0)},
-    {nome: "", gol: arr2, penalti: p1, total_penalti: sum_penalti(p1)},
-    {nome: "", gol: arr4, penalti: p2, total_penalti: sum_penalti(p2)},
-    {nome: "", gol: arr8, penalti: p3, total_penalti: sum_penalti(p3)},
-    {nome: "", gol: arr10, penalti: p4, total_penalti: sum_penalti(p4)},
-    {nome: "", gol: arr12, penalti: p5, total_penalti: sum_penalti(p5)},
-    {nome: "", gol: arr14, penalti: p6, total_penalti: sum_penalti(p6)},
-    {nome: "", gol: arr0, penalti: p7, total_penalti: sum_penalti(p7)},
+    {nome: "", gol: arr0q, penalti: p0q, total_penalti: sum_penalti(p0q)},
+    {nome: "", gol: arr1q, penalti: p1q, total_penalti: sum_penalti(p1q)},
+    {nome: "", gol: arr2q, penalti: p2q, total_penalti: sum_penalti(p2q)},
+    {nome: "", gol: arr3q, penalti: p3q, total_penalti: sum_penalti(p3q)},
+    {nome: "", gol: arr4q, penalti: p4q, total_penalti: sum_penalti(p4q)},
+    {nome: "", gol: arr5q, penalti: p5q, total_penalti: sum_penalti(p5q)},
+    {nome: "", gol: arr6q, penalti: p6q, total_penalti: sum_penalti(p6q)},
+    {nome: "", gol: arr7q, penalti: p7q, total_penalti: sum_penalti(p7q)},
 ]
 
 let semi = [
-    {nome: null, gol: arr0, penalti: 0, total_penalti: 0},
-    {nome: null, gol: arr2, penalti: 0, total_penalti: 0},
-    {nome: null, gol: arr4, penalti: 0, total_penalti: 0},
-    {nome: null, gol: arr8, penalti: 0, total_penalti: 0},
+    {nome: null, gol: arr0s, penalti: p0s, total_penalti: sum_penalti(p0s)},
+    {nome: null, gol: arr1s, penalti: p1s, total_penalti: sum_penalti(p1s)},
+    {nome: null, gol: arr2s, penalti: p2s, total_penalti: sum_penalti(p2s)},
+    {nome: null, gol: arr3s, penalti: p3s, total_penalti: sum_penalti(p3s)},
 ]
 
+
 let terceiro_lugar = [
-    {nome: null, gol: arr0, penalti: 0, total_penalti: 0},
-    {nome: null, gol: arr2, penalti: 0, total_penalti: 0},
+    {nome: null, gol: arr0t, penalti: p0t, total_penalti: sum_penalti(p0t)},
+    {nome: null, gol: arr1t, penalti: p1t, total_penalti: sum_penalti(p1t)},
 ]
 
 let final = [
-    {nome: null, gol: arr0, penalti: 0, total_penalti: 0},
-    {nome: null, gol: arr2, penalti: 0, total_penalti: 0},
+    {nome: null, gol: arr0f, penalti: p0f, total_penalti: sum_penalti(p0f)},
+    {nome: null, gol: arr1f, penalti: p1f, total_penalti: sum_penalti(p1f)},
 ]
 
 function gerarConfronto(posi, posp, posq, pos0, pos1){
@@ -223,8 +301,6 @@ function gerarConfronto(posi, posp, posq, pos0, pos1){
     }
 }
 
-
-
 gerarConfronto(oitavas, quartas, 0,0,1)
 gerarConfronto(oitavas, quartas, 1,2,3)
 gerarConfronto(oitavas, quartas, 2,4,5)
@@ -242,15 +318,28 @@ gerarConfronto(quartas, semi, 3,6,7)
 gerarConfronto(semi, final, 0,0,1);
 gerarConfronto(semi, final, 1,2,3);
 
+//times que foram pra disputa de terceiro lugar
+if(semi[0]['nome'] == final[0]['nome']){
+    terceiro_lugar[0]['nome'] = semi[1]['nome'];
+}
+else if(semi[1]['nome'] == final[0]['nome']){
+    terceiro_lugar[0]['nome'] = semi[0]['nome'];
+}
+if(semi[2]['nome'] == final[1]['nome']){
+    terceiro_lugar[1]['nome'] = semi[3]['nome'];
+}
+else if(semi[3]['nome'] == final[1]['nome']){
+    terceiro_lugar[1]['nome'] = semi[2]['nome'];
+}
 
-
-
-oitavas.map(q => console.log(q.nome));
-console.log('////////')
-quartas.map(q => console.log(q.nome));
-console.log('////////')
-semi.map(q => console.log(q.nome));
-console.log('////////')
-final.map(q => console.log(q.nome));
+console.log(oitavas)
 console.log('////////')
 console.log(quartas)
+console.log('////////')
+console.log(semi)
+console.log('////////')
+console.log(terceiro_lugar)
+console.log('////////')
+console.log(final)
+console.log('////////')
+

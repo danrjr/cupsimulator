@@ -88,10 +88,10 @@ geraCartoes(cards3)
 //console.log(cards) 
  
 let grupoA = [ 
-    {flag: "",  nome: 'Brasil', jogos:3, pontos: [], pontuacao_final:0, gols: arr0, gp: [], gc: [], saldo: 0, cartoes:cards0, soma_gols: 0, soma_cartoes: 0, soma_gc: 0, v: 0, e: 0, d: 0}, 
-    {flag: "", nome: 'Sérvia', jogos:3, pontos: [], pontuacao_final:0, gols: arr1, gp: [], gc: [], saldo: 0, cartoes:cards1, soma_gols: 0, soma_cartoes: 0,soma_gc: 0, v: 0, e: 0, d: 0}, 
-    {flag: "", nome: 'Suiça', jogos:3, pontos: [], pontuacao_final:0, gols: arr2, gp: [], gc: [], saldo: 0, cartoes:cards2, soma_gols: 0, soma_cartoes: 0,soma_gc: 0, v: 0, e: 0, d: 0}, 
-    {flag: "",  nome: 'Camarões', jogos:3, pontos: [], pontuacao_final:0, gols: arr3, gp: [], gc: [], saldo: 0, cartoes:cards3, soma_gols: 0, soma_cartoes: 0,soma_gc: 0, v: 0, e: 0, d: 0}, 
+    {nome: 'Brasil', jogos:3, pontos: [], pontuacao_final:0, gols: arr0, gp: [], gc: [], saldo: 0, cartoes:cards0, soma_gols: 0, soma_cartoes: 0, soma_gc: 0, v: 0, e: 0, d: 0}, 
+    {nome: 'Sérvia', jogos:3, pontos: [], pontuacao_final:0, gols: arr1, gp: [], gc: [], saldo: 0, cartoes:cards1, soma_gols: 0, soma_cartoes: 0,soma_gc: 0, v: 0, e: 0, d: 0}, 
+    {nome: 'Suiça', jogos:3, pontos: [], pontuacao_final:0, gols: arr2, gp: [], gc: [], saldo: 0, cartoes:cards2, soma_gols: 0, soma_cartoes: 0,soma_gc: 0, v: 0, e: 0, d: 0}, 
+    {nome: 'Camarões', jogos:3, pontos: [], pontuacao_final:0, gols: arr3, gp: [], gc: [], saldo: 0, cartoes:cards3, soma_gols: 0, soma_cartoes: 0,soma_gc: 0, v: 0, e: 0, d: 0}, 
 ] 
  
  
