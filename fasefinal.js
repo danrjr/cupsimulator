@@ -126,6 +126,26 @@ function geraGolsForte(array){
     } 
 } 
 
+function geraGolsNormal(array){ 
+    while (array.length < 1){ 
+        var gols=[0,1,2,3,4,5,6,7,8]
+        var golsponderados = [2.5,2.5, 2.5, 1.5, 0.4,0.3,0.1,0.1,0.1]
+        var totalponderado = eval(golsponderados.join("+"))
+        var ponderacao = new Array()
+        var golatual = 0;
+    
+        while (golatual<gols.length){ //step through each fruit[] element
+            for (i=0; i<golsponderados[golatual]; i++)
+                ponderacao[ponderacao.length]=gols[golatual]
+            golatual++
+        }
+        var randomnumber=Math.floor(Math.random()*totalponderado)
+
+         array.push(ponderacao[randomnumber]) 
+    } 
+} 
+
+
 function geraGolsMed(array){ 
     while (array.length < 1){ 
         var gols=[0,1,2,3,4]
@@ -186,14 +206,14 @@ penalti(p13)
 penalti(p14)
 penalti(p15)
 
-geraGolsForte(arr0q)
-geraGolsForte(arr1q)
-geraGolsForte(arr2q)
-geraGolsForte(arr3q)
-geraGolsForte(arr4q)
-geraGolsForte(arr5q)
-geraGolsForte(arr6q)
-geraGolsForte(arr7q)
+geraGolsNormal(arr0q)
+geraGolsNormal(arr1q)
+geraGolsNormal(arr2q)
+geraGolsNormal(arr3q)
+geraGolsNormal(arr4q)
+geraGolsNormal(arr5q)
+geraGolsNormal(arr6q)
+geraGolsNormal(arr7q)
 
 penalti(p0q)
 penalti(p1q)
@@ -204,20 +224,20 @@ penalti(p5q)
 penalti(p6q)
 penalti(p7q)
 
-geraGolsForte(arr0s)
-geraGolsForte(arr1s)
-geraGolsForte(arr2s)
-geraGolsForte(arr3s)
+geraGolsNormal(arr0s)
+geraGolsNormal(arr1s)
+geraGolsNormal(arr2s)
+geraGolsNormal(arr3s)
 
 penalti(p0s)
 penalti(p1s)
 penalti(p2s)
 penalti(p3s)
 
-geraGolsForte(arr0t)
-geraGolsForte(arr1t)
-geraGolsForte(arr0f)
-geraGolsForte(arr1f)
+geraGolsNormal(arr0t)
+geraGolsNormal(arr1t)
+geraGolsNormal(arr0f)
+geraGolsNormal(arr1f)
 
 penalti(p0t)
 penalti(p1t)
@@ -275,6 +295,12 @@ let final = [
     {nome: null, gol: arr1f, penalti: p1f, total_penalti: sum_penalti(p1f)},
 ]
 
+let ranking = [
+    {nome: null},
+    {nome: null},
+    {nome: null},
+]
+
 function gerarConfronto(posi, posp, posq, pos0, pos1){
     if(posi[pos0]['gol'] > posi[pos1]['gol']){
         posp[posq]['nome'] = posi[pos0]['nome']
@@ -301,6 +327,65 @@ function gerarConfronto(posi, posp, posq, pos0, pos1){
     }
 }
 
+function gerarConfrontoFinal(posi, pos0, pos1, array){
+    if(posi[pos0]['gol'] > posi[pos1]['gol']){
+        array[0] = posi[pos0]['nome'] 
+        array[1] = posi[pos1]['nome']
+    }
+    else if(posi[pos0]['gol'] < posi[pos1]['gol']){
+        array[0] = posi[pos1]['nome']
+        array[1] = posi[pos0]['nome'] 
+    }
+    else{
+        if(posi[pos0]['total_penalti'] > posi[pos1]['total_penalti']){
+            array[0] = posi[pos0]['nome'] 
+            array[1] = posi[pos1]['nome']
+        }
+        else if(posi[pos0]['total_penalti'] < posi[pos1]['total_penalti']){
+            array[0] = posi[pos1]['nome']
+            array[1] = posi[pos0]['nome'] 
+        }
+        else{
+            let tie = Math.floor(Math.random() * (2 - 0) ) + 0
+            if(tie == 1){
+                array[0] = posi[pos0]['nome'] 
+                array[1] = posi[pos1]['nome']
+            }
+            else{
+                array[0] = posi[pos1]['nome']
+                array[1] = posi[pos0]['nome'] 
+            }
+        }
+    }
+}
+
+function gerarConfrontoTerceiro(posi, pos0, pos1, array){
+    if(posi[pos0]['gol'] > posi[pos1]['gol']){
+        array[2] = posi[pos0]['nome'] 
+    }
+    else if(posi[pos0]['gol'] < posi[pos1]['gol']){
+        array[2] = posi[pos1]['nome']
+    }
+    else{
+        if(posi[pos0]['total_penalti'] > posi[pos1]['total_penalti']){
+            array[2] = posi[pos0]['nome'] 
+        }
+        else if(posi[pos0]['total_penalti'] < posi[pos1]['total_penalti']){
+            array[2] = posi[pos1]['nome']
+
+        }
+        else{
+            let tie = Math.floor(Math.random() * (2 - 0) ) + 0
+            if(tie == 1){
+                array[2] = posi[pos0]['nome'] 
+            }
+            else{
+                array[2] = posi[pos1]['nome']
+            }
+        }
+    }
+}
+
 gerarConfronto(oitavas, quartas, 0,0,1)
 gerarConfronto(oitavas, quartas, 1,2,3)
 gerarConfronto(oitavas, quartas, 2,4,5)
@@ -318,6 +403,10 @@ gerarConfronto(quartas, semi, 3,6,7)
 gerarConfronto(semi, final, 0,0,1);
 gerarConfronto(semi, final, 1,2,3);
 
+gerarConfrontoFinal(final, 0, 1, ranking);
+
+
+
 //times que foram pra disputa de terceiro lugar
 if(semi[0]['nome'] == final[0]['nome']){
     terceiro_lugar[0]['nome'] = semi[1]['nome'];
@@ -332,6 +421,8 @@ else if(semi[3]['nome'] == final[1]['nome']){
     terceiro_lugar[1]['nome'] = semi[2]['nome'];
 }
 
+gerarConfrontoTerceiro(terceiro_lugar, 0, 1, ranking)
+
 console.log(oitavas)
 console.log('////////')
 console.log(quartas)
@@ -342,4 +433,6 @@ console.log(terceiro_lugar)
 console.log('////////')
 console.log(final)
 console.log('////////')
+console.log(ranking);
 
+module.exports = {oitavas, quartas, semi, terceiro_lugar, final, ranking}

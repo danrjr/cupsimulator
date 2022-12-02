@@ -358,15 +358,15 @@ grupoA[2]['pontuacao_final'] = soma_pontos[2];
 grupoA[3]['pontuacao_final'] = soma_pontos[3];
 
 
-let classificacao = _.orderBy(grupoA, ['pontuacao_final', 'v', 'saldo', 'gp', 'e', 'soma_cartoes'], ['desc', 'desc', 'desc', 'desc', 'desc', 'asc'])
+let classificacaoG = _.orderBy(grupoA, ['pontuacao_final', 'v', 'saldo', 'gp', 'e', 'soma_cartoes'], ['desc', 'desc', 'desc', 'desc', 'desc', 'asc'])
 
-// console.log(classificacao, "TIMES CLASSIFICADOS")
+// console.log(classificacaoG, "TIMES CLASSIFICADOS")
 
 // let match = grupoA[0].nome + " " + grupoA[0].gols[0] + " x " + grupoA[1].gols[0]  + " " + grupoA[1].nome
 
 // console.log(match)
 
-const g1 = classificacao[0]
-const g2 = classificacao[1]
+const g1 = classificacaoG[0]
+const g2 = classificacaoG[1]
 
-module.exports = {g1, g2}
+module.exports = {g1, g2, classificacaoG}
